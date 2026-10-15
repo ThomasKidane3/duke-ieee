@@ -1,23 +1,18 @@
 import Link from "next/link";
 import { signupUrl } from "@/lib/content";
 
-export function Header({ showNews = true }: { showNews?: boolean }) {
+export function Header() {
   return (
-    <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/80 backdrop-blur-md">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-        <Link href="/" className="text-2xl font-light text-duke">
-          Duke <span className="font-medium">IEEE</span>
+    <header className="sticky top-0 z-50 border-b border-line/80 bg-paper/85 backdrop-blur-md">
+      <div className="mx-auto flex max-w-3xl items-center justify-between px-6 py-4">
+        <Link href="/" className="font-mono text-[12px] tracking-[0.22em] text-ink uppercase">
+          Duke IEEE
         </Link>
-        <nav className="flex items-center gap-4">
-          {showNews ? (
-            <Link href="/blog" className="text-sm text-slate-500 transition hover:text-duke">
-              News
-            </Link>
-          ) : null}
-          <a
-            href={signupUrl}
-            className="rounded-full bg-duke px-5 py-2 text-sm font-medium text-white transition hover:bg-duke/90"
-          >
+        <nav className="flex items-center gap-6 font-mono text-[12px] tracking-[0.14em] uppercase">
+          <Link href="/blog" className="text-muted transition hover:text-blue">
+            News
+          </Link>
+          <a href={signupUrl} className="text-ink transition hover:text-blue">
             Join
           </a>
         </nav>

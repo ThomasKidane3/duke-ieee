@@ -1,8 +1,14 @@
 @import "tailwindcss";
 
 @theme {
-  --color-duke: #012169;
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --color-paper: #f6f5f1;
+  --color-ink: #1a1a1a;
+  --color-muted: #5c5c5c;
+  --color-line: #ddd9d0;
+  --color-blue: #3a49f5;
+  --font-serif: var(--font-source-serif), "Iowan Old Style", Palatino, "Palatino Linotype", serif;
+  --font-mono: var(--font-plex-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
+  --font-pixel: var(--font-display), ui-monospace, monospace;
 }
 
 html {
@@ -10,6 +16,30 @@ html {
 }
 
 body {
-  background: #fff;
-  color: #0f172a;
+  background: var(--color-paper);
+  color: var(--color-ink);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: inherit;
+  font-weight: 500;
+}
+
+.wordmark {
+  font-family: var(--font-display), "Silkscreen", ui-monospace, monospace;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+
+::selection {
+  background: #d9defc;
+}
+
+.figure-grid {
+  background-color: #f7f8fc;
+  background-image: radial-gradient(#d5daf2 1px, transparent 1px);
+  background-size: 10px 10px;
 }

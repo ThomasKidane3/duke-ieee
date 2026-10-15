@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Kicker, Rule } from "@/components/Rule";
 import {
   connectionFormUrl,
   email,
@@ -11,158 +12,166 @@ import {
 
 export default function HomePage() {
   return (
-    <main>
-      <section className="px-6 pb-24 pt-24 text-center">
-        <h1 className="text-6xl font-light tracking-tight text-slate-900 sm:text-7xl">Duke IEEE</h1>
-        <p className="mx-auto mt-6 max-w-2xl text-xl text-slate-500">
-          Bridging the gap between industry, faculty, and students
+    <main className="mx-auto max-w-3xl px-6 pt-16 pb-8">
+      <p className="font-mono text-[11px] tracking-[0.22em] text-blue uppercase">Student chapter</p>
+      <h1 className="wordmark mt-4 text-4xl leading-[1.15] text-blue sm:text-6xl">DUKE IEEE</h1>
+      <p className="mt-8 max-w-xl text-xl leading-snug">
+        Bridging the gap between industry, faculty, and students.
+      </p>
+      <p className="mt-2 max-w-xl text-xl leading-snug font-medium">
+        A student-run society for ECE and CS undergraduates at Duke.
+      </p>
+      <div className="mt-8 flex flex-wrap gap-x-8 gap-y-3 font-mono text-[12px] tracking-[0.16em] uppercase">
+        <a href={signupUrl} className="text-blue underline decoration-blue/30 underline-offset-4">
+          Join Duke Groups →
+        </a>
+        <a href={eventsUrl} className="text-ink underline decoration-ink/25 underline-offset-4 hover:text-blue">
+          View events
+        </a>
+      </div>
+
+      <Rule />
+
+      <section>
+        <Kicker index="01">About</Kicker>
+        <h2 className="mt-3 text-4xl tracking-tight">About Duke IEEE</h2>
+        <p className="mt-8 text-[1.125rem] leading-relaxed">
+          IEEE is the world&apos;s largest technical professional organization for electrical and
+          electronics engineering. Duke IEEE is a student-run, pre-professional society at Duke
+          University for ECE and CS undergraduates that aims to bridge the gap between students,
+          faculty, and industry.
         </p>
-        <div className="mt-10 flex flex-wrap items-center justify-center gap-6">
-          <a
-            href={signupUrl}
-            className="rounded-full bg-duke px-6 py-3 text-sm font-medium text-white transition hover:bg-duke/90"
-          >
-            Join Duke Groups
-          </a>
-          <a href={eventsUrl} className="text-sm font-medium text-duke hover:underline">
-            View Events
-          </a>
-        </div>
+        <p className="mt-5 text-[1.125rem] leading-relaxed">
+          Duke IEEE strives to accomplish this goal with initiatives both on and off campus,
+          including hosting industry, alumni, and faculty speaker events, as well as facilitating
+          undergraduate participation in conferences.
+        </p>
+        <p className="mt-8 font-mono text-[12px] tracking-[0.14em] text-blue uppercase">
+          A network of over 400 students on campus
+        </p>
       </section>
 
-      <section className="bg-slate-50 px-6 py-24">
-        <div className="mx-auto max-w-3xl text-center">
-          <h2 className="text-4xl font-light text-slate-900">About Duke IEEE</h2>
-          <p className="mt-8 text-lg leading-relaxed text-slate-600">
-            IEEE is the world&apos;s largest technical professional organization for electrical and
-            electronics engineering. Duke IEEE is a student-run, pre-professional society at Duke
-            University for ECE and CS undergraduates that aims to bridge the gap between students,
-            faculty, and industry.
-          </p>
-          <p className="mt-6 text-lg leading-relaxed text-slate-600">
-            Duke IEEE strives to accomplish this goal with initiatives both on and off campus,
-            including hosting industry, alumni, and faculty speaker events, as well as facilitating
-            undergraduate participation in conferences.
-          </p>
-          <p className="mt-8 text-lg font-medium text-duke">
-            Duke IEEE boasts a network of over 400 students on campus
-          </p>
-        </div>
+      <Rule />
+
+      <section>
+        <Kicker index="02">Conference</Kicker>
+        <h2 className="mt-3 text-4xl tracking-tight">Supercomputing 2026</h2>
+        <p className="mt-5 max-w-xl text-[1.125rem] leading-relaxed text-ink/90">
+          We&apos;re selecting undergraduates to attend SC26 with full funding for registration,
+          travel, and lodging. Scan the QR code to apply — limited space, so fill it out ASAP.
+        </p>
+        <figure className="figure-grid mt-8 border border-[#d5daf2] p-4 sm:p-8">
+          <p className="mb-4 font-mono text-[11px] tracking-[0.2em] text-blue uppercase">Fig. 01 — Application</p>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/blog/supercomputing-qr.png"
+            alt="IEEE Supercomputing 2026 application flyer with QR code"
+            className="mx-auto w-full max-w-md"
+          />
+        </figure>
+        <Link
+          href="/blog/supercomputing-26-st-louis"
+          className="mt-6 inline-flex font-mono text-[12px] tracking-[0.16em] text-blue uppercase underline decoration-blue/30 underline-offset-4"
+        >
+          Learn more →
+        </Link>
       </section>
 
-      <section className="px-6 py-24 text-center">
-        <div className="mx-auto max-w-3xl">
-          <h2 className="text-4xl font-light text-slate-900">Supercomputing 2026</h2>
-          <p className="mt-6 text-lg leading-relaxed text-slate-500">
-            We&apos;re selecting undergraduates to attend SC26 with full funding for registration,
-            travel, and lodging. Scan the QR code to apply — limited space, so fill it out ASAP!
-          </p>
-          <div className="mx-auto mt-10 max-w-md rounded-[2rem] bg-[#c6ef6a] p-4 shadow-sm">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/blog/supercomputing-qr.png"
-              alt="IEEE Supercomputing 2026 application flyer with QR code"
-              className="w-full rounded-[1.4rem]"
-            />
-          </div>
-          <Link
-            href="/blog/supercomputing-26-st-louis"
-            className="mt-8 inline-flex items-center gap-2 text-sm font-medium text-duke hover:underline"
-          >
-            Learn more <span aria-hidden>→</span>
-          </Link>
-        </div>
-      </section>
+      <Rule />
 
-      <section className="bg-slate-50 px-6 py-24 text-center">
-        <h2 className="text-4xl font-light text-slate-900">Work at a Duke Startup</h2>
-        <p className="mx-auto mt-6 max-w-xl text-lg text-slate-500">
+      <section>
+        <Kicker index="03">Work</Kicker>
+        <h2 className="mt-3 text-4xl tracking-tight">Work at a Duke Startup</h2>
+        <p className="mt-5 max-w-xl text-[1.125rem] leading-relaxed">
           Explore exciting opportunities at startups founded by Duke students and alumni.
         </p>
         <a
           href={startupsUrl}
           target="_blank"
           rel="noreferrer"
-          className="mt-8 inline-flex items-center gap-2 rounded-full bg-duke px-6 py-3 text-sm font-medium text-white transition hover:bg-duke/90"
+          className="mt-6 inline-flex font-mono text-[12px] tracking-[0.16em] text-blue uppercase underline decoration-blue/30 underline-offset-4"
         >
-          Browse Opportunities
-          <span aria-hidden>↗</span>
+          Browse opportunities →
         </a>
       </section>
 
-      <section className="bg-duke px-6 py-20 text-center text-white">
-        <h2 className="text-4xl font-light">Interested in Being an Industry Partner?</h2>
-        <p className="mx-auto mt-6 max-w-2xl text-lg text-white/85">
+      <Rule />
+
+      <section className="border border-line bg-white/35 px-6 py-8 sm:px-8">
+        <Kicker index="04">Partners</Kicker>
+        <h2 className="mt-3 text-3xl tracking-tight sm:text-4xl">Interested in being an industry partner?</h2>
+        <p className="mt-4 max-w-xl text-[1.125rem] leading-relaxed">
           Gain direct access to top Duke engineers and support the next generation of technology
           leaders.
         </p>
-        <a href={`mailto:${email}`} className="mt-8 inline-flex items-center gap-2 text-lg">
-          <span aria-hidden>✉</span>
-          Contact us at <span className="underline">{email}</span>
+        <a
+          href={`mailto:${email}`}
+          className="mt-6 inline-flex font-mono text-[12px] tracking-[0.14em] text-blue uppercase underline decoration-blue/30 underline-offset-4"
+        >
+          {email}
         </a>
       </section>
 
-      <section className="bg-slate-50 px-6 py-24">
-        <div className="mx-auto max-w-6xl">
-          <div className="text-center">
-            <h2 className="text-4xl font-light text-slate-900">Executive Team</h2>
-            <p className="mt-4 text-lg text-slate-500">Meet the leaders driving Duke IEEE forward</p>
-          </div>
-          <div className="mt-12 grid gap-6 md:grid-cols-2">
-            {team.map((member) => (
-              <article
-                key={member.name}
-                className="rounded-2xl border border-slate-200 bg-white px-8 py-10 text-center shadow-sm"
-              >
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={member.image}
-                  alt={member.name}
-                  className="mx-auto h-28 w-28 rounded-full object-cover ring-8 ring-slate-100"
-                />
-                <h3 className="mt-6 text-2xl font-semibold text-slate-900">{member.name}</h3>
-                <p className="mt-1 font-medium text-duke">{member.role}</p>
-                <p className="mt-4 text-left text-[15px] leading-relaxed text-slate-600">
-                  {member.bio}
+      <Rule />
+
+      <section>
+        <Kicker index="05">People</Kicker>
+        <h2 className="mt-3 text-4xl tracking-tight">Executive team</h2>
+        <p className="mt-4 text-lg text-muted">Meet the leaders driving Duke IEEE forward.</p>
+        <div className="mt-4">
+          {team.map((member, index) => (
+            <article key={member.name} className="grid grid-cols-[4.5rem_1fr] gap-5 border-t border-line py-8 sm:grid-cols-[5.5rem_1fr] sm:gap-7">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={member.image}
+                alt={member.name}
+                className="mt-1 aspect-square w-full object-cover"
+              />
+              <div>
+                <p className="font-mono text-[11px] tracking-[0.18em] text-blue uppercase">
+                  {String(index + 1).padStart(2, "0")} · {member.role}
                 </p>
-              </article>
-            ))}
-          </div>
+                <h3 className="mt-1 text-2xl tracking-tight">{member.name}</h3>
+                <p className="mt-3 text-[1.02rem] leading-relaxed text-ink/85">{member.bio}</p>
+              </div>
+            </article>
+          ))}
         </div>
       </section>
 
-      <section className="px-6 py-24">
-        <div className="mx-auto max-w-6xl">
-          <div className="text-center">
-            <h2 className="text-4xl font-light text-slate-900">Resources</h2>
-            <p className="mt-4 text-lg text-slate-500">Quick access to important forms and tools</p>
-          </div>
-          <div className="mt-12 grid gap-6 md:grid-cols-2">
-            <article className="rounded-2xl border border-slate-200 p-8">
-              <h3 className="text-xl font-medium text-slate-900">Report Network Connection</h3>
-              <p className="mt-2 text-slate-500">Report a connection to industry or an alumni</p>
-              <a
-                href={connectionFormUrl}
-                target="_blank"
-                rel="noreferrer"
-                className="mt-6 inline-flex text-sm font-medium text-duke hover:underline"
-              >
-                Submit
-              </a>
-            </article>
-            <article className="rounded-2xl border border-slate-200 p-8">
-              <h3 className="text-xl font-medium text-slate-900">Schedule Meeting</h3>
-              <p className="mt-2 text-slate-500">Book time with our executive team</p>
-              <a
-                href={meetingUrl}
-                target="_blank"
-                rel="noreferrer"
-                className="mt-6 inline-flex text-sm font-medium text-duke hover:underline"
-              >
-                Book
-              </a>
-            </article>
-          </div>
+      <Rule />
+
+      <section>
+        <Kicker index="06">Resources</Kicker>
+        <h2 className="mt-3 text-4xl tracking-tight">Resources</h2>
+        <p className="mt-4 text-lg text-muted">Quick access to important forms and tools.</p>
+        <div className="mt-6 border-t border-line">
+          <a
+            href={connectionFormUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="grid gap-2 border-b border-line py-5 sm:grid-cols-[8rem_1fr_auto] sm:items-baseline"
+          >
+            <span className="font-mono text-[11px] tracking-[0.18em] text-blue uppercase">Submit</span>
+            <span>
+              <span className="block text-xl">Report network connection</span>
+              <span className="mt-1 block text-muted">Report a connection to industry or an alumni.</span>
+            </span>
+            <span className="font-mono text-[12px] text-blue">→</span>
+          </a>
+          <a
+            href={meetingUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="grid gap-2 border-b border-line py-5 sm:grid-cols-[8rem_1fr_auto] sm:items-baseline"
+          >
+            <span className="font-mono text-[11px] tracking-[0.18em] text-blue uppercase">Book</span>
+            <span>
+              <span className="block text-xl">Schedule meeting</span>
+              <span className="mt-1 block text-muted">Book time with our executive team.</span>
+            </span>
+            <span className="font-mono text-[12px] text-blue">→</span>
+          </a>
         </div>
       </section>
     </main>

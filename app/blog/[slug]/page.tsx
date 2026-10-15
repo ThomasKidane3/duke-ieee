@@ -23,40 +23,37 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
   if (!post) notFound();
 
   return (
-    <main className="px-6 py-16">
-      <article className="mx-auto max-w-3xl">
-        <Link href="/blog" className="text-sm font-medium text-duke hover:underline">
-          ← Back to Blog
+    <main className="mx-auto max-w-3xl px-6 pt-16 pb-20">
+      <article>
+        <Link
+          href="/blog"
+          className="font-mono text-[12px] tracking-[0.16em] text-blue uppercase underline decoration-blue/30 underline-offset-4"
+        >
+          ← News
         </Link>
-        <div className="mt-8 flex flex-wrap gap-2">
-          {post.tags.map((tag) => (
-            <span
-              key={tag}
-              className="rounded-full bg-duke/10 px-3 py-1 text-xs font-medium text-duke"
-            >
-              {tag}
-            </span>
-          ))}
-        </div>
-        <h1 className="mt-4 text-4xl font-light leading-tight text-slate-900 sm:text-5xl">
-          {post.title}
-        </h1>
-        <p className="mt-4 text-sm text-slate-400">
+        <p className="mt-10 font-mono text-[11px] tracking-[0.18em] text-blue uppercase">
+          {post.tags.join(" · ")}
+        </p>
+        <h1 className="mt-3 text-4xl leading-tight tracking-tight sm:text-5xl">{post.title}</h1>
+        <p className="mt-4 font-mono text-[12px] tracking-[0.12em] text-muted uppercase">
           {post.author} · {post.date} · {post.readTime}
         </p>
-        <div className="mt-8 overflow-hidden rounded-2xl">
+        <figure className="figure-grid mt-8 border border-[#d5daf2] p-3">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={post.image} alt={post.imageAlt} className="max-h-[420px] w-full object-cover" />
-        </div>
+          <img src={post.image} alt={post.imageAlt} className="max-h-[460px] w-full object-cover" />
+          <figcaption className="px-1 pt-3 font-mono text-[11px] tracking-[0.16em] text-blue uppercase">
+            Fig. — {post.imageAlt}
+          </figcaption>
+        </figure>
         <div className="mt-10">
           <ArticleBody blocks={post.body} />
         </div>
-        <div className="mt-12 flex flex-wrap gap-4 border-t border-slate-200 pt-8 text-sm">
-          <Link href="/blog" className="font-medium text-duke hover:underline">
-            Back to All Articles
+        <div className="mt-12 flex flex-wrap gap-6 border-t border-line pt-6 font-mono text-[12px] tracking-[0.14em] uppercase">
+          <Link href="/blog" className="text-blue underline decoration-blue/30 underline-offset-4">
+            All articles
           </Link>
-          <Link href="/" className="font-medium text-duke hover:underline">
-            Return to Duke IEEE Home
+          <Link href="/" className="text-ink underline decoration-ink/25 underline-offset-4 hover:text-blue">
+            Home
           </Link>
         </div>
       </article>
