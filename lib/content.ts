@@ -34,6 +34,12 @@ export const team: TeamMember[] = [
     bio: "Aniketh (Ani) Shenoy Kota is a product leader and global changemaker, known for scaling a healthcare SaaS platform to a multimillion-dollar acquisition. He currently serves on the various global IEEE committees, shaping global strategies and leading young professional and student initiatives worldwide, and being the Global Chapters & Branches Coordinator for IEEE TEMS.",
   },
   {
+    name: "Thomas Kidane",
+    role: "CS Chair",
+    image: "/team/thomas.jpg",
+    bio: "Thomas serves as IEEE CS Chair for the Duke IEEE Chapter. He grew up in Addis Ababa, Ethiopia, and is currently a junior studying Mathematics and Computer Science. He has done research on extremal combinatorics, hardware accelerators, and diffusion models. In his free time, he enjoys following new developments in the startup space, and currently holds the title of #1 fanboy of Synapse Semiconductor, a YC startup cofounded by the previous IEEE president, Sanjeev.",
+  },
+  {
     name: "Leo Zhang",
     role: "Co-Director of Events",
     image: "/team/leo-zhang.jpg",
